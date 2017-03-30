@@ -2,10 +2,10 @@ from character import Player
 from weapons import Weapon
 import random
 
-wep_array = ()
 
 rifle = Weapon("rifle")
 revolver = Weapon("revolver")
+wep_array = (rifle, revolver)
 
 
 def chance(percent=50):
@@ -14,3 +14,8 @@ def chance(percent=50):
 
 def game_init():
     p = Player()
+
+    if chance():
+        p.weapon = rifle
+    else:
+        p.weapon = revolver
