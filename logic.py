@@ -5,7 +5,7 @@ import random
 wep_array = ()
 
 rifle = Weapon("rifle")
-
+revolver = Weapon("revolver")
 
 
 def chance(percent=50):
