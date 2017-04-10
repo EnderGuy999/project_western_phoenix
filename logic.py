@@ -2,6 +2,8 @@ from character import Player
 from weapons import Weapon
 import random
 
+hit_count = 0
+hit_last_round = True
 
 rifle = Weapon("rifle")
 revolver = Weapon("revolver")
