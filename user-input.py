@@ -5,6 +5,7 @@ def user_response():
 
     if user_input == "attack":
         hit = logic.chance(logic.p.chance)
+        if logic.hit_last_round and logic.aim_last_round
 
         if hit:
             logic.hit_last_round = True
@@ -15,10 +16,11 @@ def user_response():
             print("You fired, but you missed. Good for you.")
 
     elif user_input == "take aim":
-        if logic.hit_last_round and logic.p.chance != 50:
+        #how do we get this to occur if the player HAS 50%
+        if logic.hit_last_round and logic.p.chance != 75:
             logic.p.chance = 75
 
-        elif not logic.hit_last_round and logic.p.chance != 25:
+        elif not logic.hit_last_round and logic.p.chance != 50:
             logic.p.chance = 50
         #add last two or three possibiities.
         #where will chance be changed per round.
