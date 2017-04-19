@@ -30,13 +30,14 @@ def user_response():
 
         if logic.hit_last_round and logic.game_init.p.chance != 75:
             logic.game_init.p.chance = 75
-
         elif not logic.hit_last_round and logic.game_init.p.chance != 50:
             logic.p.chance = 50
-
         else:
             print("An unexpected occurrence happened in user_input, take aim. \n hit_last_round:%s p_chance: %s" % (logic.hit_last_round, logic.game_init.p.chance))
             #revisit why this happens after two take aims, later.
+            return
+
+        print("You took aim.")
 
 
     elif user_input == "help":
