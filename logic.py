@@ -3,7 +3,7 @@ from weapons import Weapon
 import random
 
 hit_count = 0
-hit_last_round = True
+hit_last_round = False
 aim_last_round = False
 
 rifle = Weapon("rifle")

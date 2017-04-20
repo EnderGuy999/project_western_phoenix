@@ -26,15 +26,15 @@ def user_response():
             print("You fired, but you missed. Good for you.")
 
     elif user_input == "take aim":
-        logic.hit_last_round = True
-
         if logic.hit_last_round and logic.game_init.p.chance != 75:
             logic.game_init.p.chance = 75
         elif not logic.hit_last_round and logic.game_init.p.chance != 50:
-            logic.p.chance = 50
+            logic.game_init.p.chance = 50
+        elif(logic.hit_last_round and logic.game_init.p.chance == 75) or (not logic.hit_last_round and logic.game_init.p.chance == 50):
+            print("You have taken aim too many times.")
+            return
         else:
             print("An unexpected occurrence happened in user_input, take aim. \n hit_last_round:%s p_chance: %s" % (logic.hit_last_round, logic.game_init.p.chance))
-            #revisit why this happens after two take aims, later.
             return
 
         print("You took aim.")
