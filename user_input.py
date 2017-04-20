@@ -9,7 +9,7 @@ def help():
 def user_response():
     user_input = input().lower()
 
-    if user_input == "attack":
+    if user_input == ("attack" or "fire"):
         hit = logic.chance(logic.game_init.p.chance)
         if logic.hit_last_round and logic.aim_last_round:
             logic.game_init.p.chance = 50
@@ -25,7 +25,7 @@ def user_response():
             logic.hit_last_round = False
             print("You fired, but you missed. Good for you.")
 
-    elif user_input == "take aim":
+    elif user_input == ("take aim" or "aim"):
         if logic.hit_last_round and logic.game_init.p.chance != 75:
             logic.game_init.p.chance = 75
         elif not logic.hit_last_round and logic.game_init.p.chance != 50:
